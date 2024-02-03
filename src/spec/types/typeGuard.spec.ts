@@ -1,29 +1,15 @@
-import { columnMapperMethod, } from "../../utils/generics";
+import { Shape, isRectangle, isSquare } from "../../utils/typeGuard";
 
 describe('Type Guards', () => {
   
   it('Check if square', () => {
-   
+    const shape: Shape = { sideLength: 10 }
+    expect(isSquare(shape)).toBeTruthy()
   })
 
+  it('Check if rectangle', () => {
+    const shape: Shape = { height: 100, width: 10}
+    expect(isRectangle(shape)).toBeTruthy()
+  });
 
-  it('Generic function with id field', () => {
-    const testData = [{
-      id: 1,
-      field: '100'
-    },{
-      id: 2,
-      field: '150'
-    },{
-      id: 4,
-      field: '100'
-    },{
-      id: 4,
-      field: '100'
-    }]
-    const array = columnMapperMethod(testData)
-
-    expect(array.length).toEqual(testData.length)
-    expect(array[0].id).toEqual(testData[0].id)
-  })
 })

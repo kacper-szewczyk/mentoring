@@ -1,14 +1,5 @@
-// Napisz funkcję, która sprawdza typ przekazanego argumentu i zwraca odpowiednią wartość w zależności od typu z wykorzystaniem typeof
-const foo = (value: unknown): void => {
-  
-}
 
-
-// Napisz funkcję, która sprawdza czy obiekt zawiera odpowiednie pole i zwraca zawartość 
-// tego pola lub rzuca wyjątek z wykorzystaniem operatora in
-
-//const checkProperty = (object: object): 
-
+// Basic types
 type Square = {
   sideLength: number;
 }
@@ -18,6 +9,25 @@ type Rectangle = {
   height: number;
 }
 
-const calculateArea = (shape: Square | Rectangle): number | never => {
-  
+export type Shape = Square | Rectangle;
+
+export const isSquare = (shape: Shape): shape is Square => {
+  // TODO: implementacja
+  return false;
 }
+
+export const isRectangle = (shape: Shape): shape is Rectangle => {
+  // TODO: implementacja
+  return false;
+}
+
+
+
+// Advanced types
+// Napisz type guard, który sprawdzi czy dany obiekt jest typu Shape
+
+export const isShape = (shape: unknown): shape is Shape => {
+  return false;
+}
+
+
