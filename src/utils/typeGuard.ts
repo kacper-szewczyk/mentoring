@@ -25,6 +25,7 @@ export const isRectangle = (shape: Shape): shape is Rectangle => {
 
 // Advanced types
 // Napisz type guard, który sprawdzi czy dany obiekt jest typu Shape
+// Uwzględnij, żeby type guard działał również wtedy, kiedy do Share dojdzie kolejny typ np. Triangle
 
 export const isShape = (shape: unknown): shape is Shape => {
   return false;
